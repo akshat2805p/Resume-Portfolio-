@@ -4,7 +4,7 @@
 
 **Full-Stack Developer · AI Engineer · Open Source Fellow @ IIT Bombay**
 
-[![Live Site](https://img.shields.io/badge/Live%20Site-Visit-b8935a?style=for-the-badge&logo=vercel&logoColor=white)](https://akshat2805p.github.io/Resume-Portfolio-)
+[![Live Site](https://img.shields.io/badge/Live%20Site-Visit-b8935a?style=for-the-badge&logo=vercel&logoColor=white)](resume-portfolio-sandy.vercel.app)
 [![LeetCode](https://img.shields.io/badge/LeetCode-Knight%20%7C%201923-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/u/akshatpandey28/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/akshatpandey28/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/akshat2805p)
