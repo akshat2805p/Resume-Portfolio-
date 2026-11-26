@@ -1,0 +1,352 @@
+/* Mobile-first guardrails and layout refinements. Keep these after index.css so
+   they can safely override desktop component sizing without changing desktop UI. */
+@media (max-width: 640px) {
+  html,
+  body,
+  #root,
+  .shivam-portfolio-root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    min-width: 320px;
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    touch-action: manipulation;
+  }
+
+  /* The animated shader background is replaced with this lightweight gradient on
+     touch/phone layouts, avoiding a second always-running WebGL scene on phones. */
+  .holo-bg-mobile {
+    background:
+      radial-gradient(ellipse at 50% 12%, rgba(148, 163, 184, 0.12), transparent 54%),
+      linear-gradient(180deg, #101722 0%, var(--bg) 62%);
+  }
+
+  [data-sky="day"] .holo-bg-mobile {
+    background:
+      radial-gradient(ellipse at 50% 12%, rgba(148, 163, 184, 0.22), transparent 54%),
+      linear-gradient(180deg, #e8f0f7 0%, var(--bg) 62%);
+  }
+
+  .holo-bg-mobile .holo-readability-veil {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent, var(--bg) 72%);
+  }
+
+  .hero {
+    margin-top: 0 !important;
+    padding: 18px 14px 28px !important;
+  }
+
+  .hero-split-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .hero-left-col {
+    min-width: 0;
+    padding: 20px 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .hero-status-pill {
+    align-self: stretch !important;
+    justify-content: center;
+    border-radius: 14px !important;
+    text-align: center;
+  }
+
+  .hero-status-pill > span:last-child {
+    line-height: 1.45;
+  }
+
+  .hero-kicker-text {
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-ascii-name-wrap {
+    height: clamp(64px, 20vw, 88px) !important;
+    margin: 0 auto 4px !important;
+  }
+
+  .hero-intro-text {
+    max-width: 100% !important;
+    font-size: 14px !important;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-skills-strip {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-badges-wrap {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-badge-item {
+    max-width: 100%;
+    white-space: normal !important;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-actions {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px !important;
+  }
+
+  .hero-actions a,
+  .hero-actions button {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px !important;
+    white-space: normal;
+  }
+
+  .hero-lanyard-stage {
+    height: clamp(250px, 74vw, 330px) !important;
+    min-height: 0 !important;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .section-wrap,
+  #projects,
+  #skills,
+  #experience,
+  #archive,
+  #contact {
+    width: 100%;
+    max-width: 100% !important;
+    padding: 52px 16px !important;
+    scroll-margin-top: 64px;
+  }
+
+  #projects {
+    padding-top: 36px !important;
+  }
+
+  #projects h2,
+  #skills h2,
+  #experience h2,
+  #archive h2,
+  #contact h2 {
+    font-size: clamp(1.9rem, 9vw, 2.6rem) !important;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  /* Keep the fixed dock within narrow device widths and retain comfortable targets. */
+  .navwrap {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 8px) !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .navbox {
+    width: max-content;
+    max-width: calc(100vw - 16px);
+    gap: 3px !important;
+  }
+
+  .navwrap .mark,
+  .navwrap .glass {
+    height: 40px;
+  }
+
+  .navwrap .mark {
+    width: 36px;
+    flex: 0 0 36px;
+  }
+
+  .navwrap .dock-items-glass {
+    gap: 0 !important;
+    padding: 0 3px !important;
+  }
+
+  .navwrap .dock-action-btn {
+    width: 28px;
+    height: 34px;
+    padding: 0 !important;
+  }
+
+  .navwrap .dock-action-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .navwrap .ctrl {
+    gap: 2px !important;
+    padding: 0 3px !important;
+  }
+
+  .navwrap .ctrl .dn {
+    width: 42px !important;
+    height: 26px !important;
+    margin: 0 !important;
+  }
+
+  .navwrap .ctrl .dn .knob {
+    width: 20px !important;
+    height: 20px !important;
+    top: 3px !important;
+    left: 3px !important;
+  }
+
+  .navwrap .ctrl .dn[aria-checked="false"] .knob {
+    transform: translateX(16px) !important;
+  }
+
+  .navwrap .ctrl .vsep,
+  .navwrap .ctrl .when {
+    display: none !important;
+  }
+
+  .dockveil {
+    height: 88px;
+  }
+
+  /* Horizontal, swipeable filters and project controls on compact screens. */
+  #archive > div:first-child > div:last-child {
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 1px 10px;
+  }
+
+  #archive > div:first-child > div:last-child::-webkit-scrollbar {
+    display: none;
+  }
+
+  #archive input {
+    min-width: 0;
+    font-size: 16px !important;
+  }
+
+  .archive-chroma-wrap {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #projects > div:last-child {
+    min-height: 430px !important;
+  }
+
+  /* Ensure modal content remains usable above the bottom dock and safe areas. */
+  .room {
+    padding: max(12px, env(safe-area-inset-top, 0px)) 12px
+      calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .room .x {
+    top: max(10px, env(safe-area-inset-top, 0px));
+    right: 10px;
+  }
+
+  .room .ctl {
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .cvsheet,
+  .letter,
+  .cfgcard {
+    width: 100% !important;
+    max-width: 100%;
+    max-height: calc(100dvh - 100px - env(safe-area-inset-top, 0px));
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  .cvsheet .row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .cvsheet .row span {
+    white-space: normal;
+  }
+
+  .letter textarea {
+    min-height: 150px;
+    font-size: 19px;
+    line-height: 1.6;
+  }
+
+  .cfgcard {
+    grid-template-columns: minmax(0, 1fr) !important;
+    padding: 18px;
+  }
+
+  .cfgcard .cfgart {
+    width: min(72%, 260px) !important;
+  }
+
+  .book {
+    --pw: min(88vw, calc((100dvh - 170px) * 0.7071)) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .navwrap .mark {
+    width: 32px;
+    flex-basis: 32px;
+  }
+
+  .navwrap .dock-action-btn {
+    width: 25px;
+  }
+
+  .navwrap .dock-action-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .hero-left-col {
+    padding: 18px 12px !important;
+  }
+
+  #projects,
+  #skills,
+  #experience,
+  #archive,
+  #contact {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .holo-bg-mobile * {
+    animation: none !important;
+  }
+}
