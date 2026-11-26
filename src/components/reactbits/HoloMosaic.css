@@ -12,3 +12,13 @@
   width: 100%;
   height: 100%;
 }
+
+/* The CSS glow remains visible as a fallback if a mobile browser cannot create WebGL2. */
+.holo-bg-root {
+  isolation: isolate;
+}
+
+.holo-bg-mobile .holo-mosaic-canvas {
+  /* Keep the effect present without making the mobile background overpower content. */
+  opacity: 0.82;
+}
